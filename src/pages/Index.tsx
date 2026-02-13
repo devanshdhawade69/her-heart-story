@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Heart, ArrowDown, Sparkles, Calendar, Lock, Clock } from "lucide-react";
+import { Heart, ArrowDown, Sparkles, Calendar, Lock, Clock, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FloatingHearts } from "@/components/FloatingHearts";
@@ -8,6 +8,7 @@ import { TypingEffect } from "@/components/TypingEffect";
 import { TimelineItem } from "@/components/TimelineItem";
 import { DateScheduler } from "@/components/DateScheduler";
 import { MemoryVault } from "@/components/MemoryVault";
+import { MemoryGallery } from "@/components/MemoryGallery";
 import heroImage from "@/assets/hero-image.jpg";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
@@ -121,7 +122,7 @@ With all my heart ❤️`;
 
       {/* Navigation Dots */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4">
-        {["hero", "timeline", "gallery", "letter", "scheduler", "vault", "finale"].map((section) => (
+        {["hero", "timeline", "gallery", "letter", "scheduler", "vault", "memory-gallery", "finale"].map((section) => (
           <button key={section} onClick={() => scrollToSection(section)} className={`w-3 h-3 rounded-full transition-all duration-300 ${activeSection === section ? "bg-primary scale-150" : "bg-primary/30 hover:bg-primary/60"}`} aria-label={`Go to ${section}`} />
         ))}
       </div>
@@ -246,6 +247,18 @@ With all my heart ❤️`;
             <p className="text-xl text-muted-foreground">Unlock your secret surprises 🔐</p>
           </div>
           <MemoryVault />
+        </div>
+      </section>
+
+      {/* Memory Gallery Section */}
+      <section id="memory-gallery" className="py-32 px-4 relative z-10 bg-[hsl(28_100%_86%)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in">
+            <Camera className="w-12 h-12 mx-auto mb-4 text-primary animate-float" />
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-6 text-foreground">Our Memory Gallery</h2>
+            <p className="text-xl text-muted-foreground">89 moments, one beautiful story</p>
+          </div>
+          <MemoryGallery />
         </div>
       </section>
 
