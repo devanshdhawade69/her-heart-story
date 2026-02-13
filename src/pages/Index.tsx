@@ -250,7 +250,7 @@ With all my heart ❤️`;
       {/* Valentines Finale */}
       <section id="finale" className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={valentineFinale} alt="Birthday celebration" className="w-full h-full object-cover opacity-30" />
+          <img src={valentineFinale} alt="Valentines celebration" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         </div>
 
