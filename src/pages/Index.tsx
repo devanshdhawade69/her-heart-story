@@ -1,11 +1,13 @@
 import { useEffect, useState, useRef } from "react";
-import { Heart, ArrowDown, Sparkles, Calendar, Music as MusicIcon } from "lucide-react";
+import { Heart, ArrowDown, Sparkles, Calendar, Lock, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FloatingHearts } from "@/components/FloatingHearts";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { TypingEffect } from "@/components/TypingEffect";
 import { TimelineItem } from "@/components/TimelineItem";
+import { DateScheduler } from "@/components/DateScheduler";
+import { MemoryVault } from "@/components/MemoryVault";
 import heroImage from "@/assets/hero-image.jpg";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
@@ -119,7 +121,7 @@ With all my heart ❤️`;
 
       {/* Navigation Dots */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4">
-        {["hero", "timeline", "gallery", "letter", "finale"].map((section) => (
+        {["hero", "timeline", "gallery", "letter", "scheduler", "vault", "finale"].map((section) => (
           <button key={section} onClick={() => scrollToSection(section)} className={`w-3 h-3 rounded-full transition-all duration-300 ${activeSection === section ? "bg-primary scale-150" : "bg-primary/30 hover:bg-primary/60"}`} aria-label={`Go to ${section}`} />
         ))}
       </div>
@@ -223,27 +225,27 @@ With all my heart ❤️`;
         </div>
       </section>
 
-      {/* Shared Music Section */}
-      <section className="py-32 px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <MusicIcon className="w-12 h-12 mx-auto mb-6 text-primary animate-float" />
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-foreground">Our Songs</h2>
-          <p className="text-xl text-muted-foreground mb-12">The soundtrack to our love story</p>
-
-          <div className="space-y-6">
-            <Card className="p-6 bg-gradient-card shadow-soft hover:shadow-glow transition-all">
-              <p className="text-lg text-muted-foreground mb-2">"This one reminds me of your sleepy voice in the morning"</p>
-              <p className="text-sm text-primary">🎵 Replace with your special song</p>
-            </Card>
-            <Card className="p-6 bg-gradient-card shadow-soft hover:shadow-glow transition-all">
-              <p className="text-lg text-muted-foreground mb-2">"Play this when you miss me"</p>
-              <p className="text-sm text-primary">🎵 Replace with your special song</p>
-            </Card>
-            <Card className="p-6 bg-gradient-card shadow-soft hover:shadow-glow transition-all">
-              <p className="text-lg text-muted-foreground mb-2">"Our song that started it all"</p>
-              <p className="text-sm text-primary">🎵 Replace with your special song</p>
-            </Card>
+      {/* Date Scheduler Section */}
+      <section id="scheduler" className="py-32 px-4 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <Clock className="w-12 h-12 mx-auto mb-4 text-primary animate-float" />
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-6 text-foreground">Our Date Scheduler</h2>
+            <p className="text-xl text-muted-foreground">Your time is my highest priority process ❤️</p>
           </div>
+          <DateScheduler />
+        </div>
+      </section>
+
+      {/* Memory Vault Section */}
+      <section id="vault" className="py-32 px-4 relative z-10 bg-gradient-dark">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <Lock className="w-12 h-12 mx-auto mb-4 text-primary animate-float" />
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-6 text-foreground">Encrypted Memory Vault</h2>
+            <p className="text-xl text-muted-foreground">Unlock your secret surprises 🔐</p>
+          </div>
+          <MemoryVault />
         </div>
       </section>
 
