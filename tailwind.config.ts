@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
+        'dancing': ['Dancing Script', 'cursive'],
       },
       backgroundImage: {
         'gradient-romantic': 'var(--gradient-romantic)',
