@@ -55,17 +55,17 @@ const Index = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const heartfeltLetter = `My Dearest Love,
+  const heartfeltLetter = `My kuchu puchu Bhondu,
 
 As I sit here trying to put my feelings into words, I realize that no amount of code, no matter how elegant, could ever express what you mean to me. You've turned my world into something magical, something I never knew was possible.
 
-Every moment with you feels like a gift. Your laugh is my favorite melody, your smile my favorite view, and your presence my favorite place to be. You've taught me what it means to truly love someone, not just with words, but with every beat of my heart.
+Every moment with you feels like a gift. Your laugh is my favorite melody, your smile my favorite view, and your presence my favorite place to be. My personal space is yours. You've taught me what it means to truly love someone, not just with words, but with everything you do.
 
 On this special day, I want you to know that you are cherished beyond measure. You are my best friend, my adventure partner, my safe harbor, and my greatest love. Thank you for being exactly who you are, and for letting me be part of your beautiful life.
 
 Here's to many more memories, many more laughs, and a lifetime of love together.
 
-Forever yours,
+Forever your goldfish memory head,
 With all my heart ❤️`;
 
   const timelineEvents = [
@@ -88,9 +88,9 @@ With all my heart ❤️`;
       image: timeline3,
     },
     {
-      date: "The Confession",
-      title: "Three Words That Changed Everything",
-      description: "Under the stars, with my heart racing, I told you how I felt. And when you said it back, I knew I had found my forever. That moment will always be etched in my heart.",
+      date: "Our First Halloween",
+      title: "The Night When I Was Finnally Introduced To Your Family",
+      description: "We drank together, we danced together, met ur family together, and I felt like I was exactly where I was supposed to be. That night solidified everything for me. I knew that I wanted to spend every Halloween, and every day, with you.",
       image: timeline4,
     },
   ];
@@ -106,7 +106,7 @@ With all my heart ❤️`;
     },
     {
       image: memory3,
-      caption: "Every coffee date with you feels like home.",
+      caption: "Every date with you feels like home.",
     },
   ];
 
