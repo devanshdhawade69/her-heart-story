@@ -21,7 +21,7 @@ const defaultVouchers: HugVoucher[] = [
   { id: "6", title: "Letter on Demand", description: "Ask and you'll receive a handwritten love letter within 24 hours.", emoji: "💌", claimed: false },
 ];
 
-const VAULT_KEY = "140224"; // Replace with your special date
+const VAULT_KEY = "140223"; // Replace with your special date
 
 export const MemoryVault = () => {
   const [isLocked, setIsLocked] = useState(true);
@@ -87,7 +87,10 @@ export const MemoryVault = () => {
               type="password"
               placeholder="Enter the key... (hint: DDMMYY)"
               value={keyInput}
-              onChange={(e) => { setKeyInput(e.target.value); setError(""); }}
+              onChange={(e) => {
+                setKeyInput(e.target.value);
+                setError("");
+              }}
               onKeyDown={(e) => e.key === "Enter" && tryUnlock()}
               className="text-center bg-background/50 text-lg tracking-widest"
               maxLength={6}
@@ -123,24 +126,14 @@ export const MemoryVault = () => {
         </div>
       )}
 
-      <p className="text-center text-sm text-muted-foreground font-mono">
-        // Vault unlocked 🔓 — Welcome, love
-      </p>
+      <p className="text-center text-sm text-muted-foreground font-mono">// Vault unlocked 🔓 — Welcome, love</p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {vouchers.map((voucher) => (
-          <Card
-            key={voucher.id}
-            className={`group bg-gradient-card shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden ${
-              voucher.claimed ? "opacity-60" : "hover:scale-105 cursor-pointer"
-            }`}
-            onClick={() => !voucher.claimed && claimVoucher(voucher.id)}
-          >
+          <Card key={voucher.id} className={`group bg-gradient-card shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden ${voucher.claimed ? "opacity-60" : "hover:scale-105 cursor-pointer"}`} onClick={() => !voucher.claimed && claimVoucher(voucher.id)}>
             <CardContent className="p-5 text-center space-y-3">
               <div className="text-4xl">{voucher.emoji}</div>
-              <h4 className={`font-playfair font-bold text-foreground ${voucher.claimed ? "line-through" : ""}`}>
-                {voucher.title}
-              </h4>
+              <h4 className={`font-playfair font-bold text-foreground ${voucher.claimed ? "line-through" : ""}`}>{voucher.title}</h4>
               <p className="text-sm text-muted-foreground">{voucher.description}</p>
               {voucher.claimed ? (
                 <span className="inline-flex items-center gap-1 text-xs text-primary font-medium">
@@ -160,19 +153,8 @@ export const MemoryVault = () => {
       {showAdd ? (
         <Card className="bg-gradient-card shadow-soft p-6">
           <CardContent className="p-0 space-y-3">
-            <Input
-              placeholder="Voucher title (e.g., 'Forehead Kiss')"
-              value={newTitle}
-              onChange={(e) => setNewTitle(e.target.value)}
-              className="bg-background/50"
-            />
-            <Input
-              placeholder="Description (optional)"
-              value={newDesc}
-              onChange={(e) => setNewDesc(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && addVoucher()}
-              className="bg-background/50"
-            />
+            <Input placeholder="Voucher title (e.g., 'Forehead Kiss')" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} className="bg-background/50" />
+            <Input placeholder="Description (optional)" value={newDesc} onChange={(e) => setNewDesc(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addVoucher()} className="bg-background/50" />
             <div className="flex gap-2">
               <Button onClick={addVoucher} size="sm" className="rounded-full">
                 <Plus className="w-4 h-4 mr-1" /> Add Voucher

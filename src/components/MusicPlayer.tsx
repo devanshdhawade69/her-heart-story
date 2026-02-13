@@ -8,7 +8,7 @@ export const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // You can replace this with your own music URL or file
-  const musicUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+  const musicUrl = "/Dave-feat-Tems-Raindance-(CeeNaija.com).mp3";
 
   useEffect(() => {
     if (audioRef.current) {
@@ -36,20 +36,10 @@ export const MusicPlayer = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex gap-2">
-      <Button
-        onClick={togglePlay}
-        size="icon"
-        variant="secondary"
-        className="rounded-full shadow-glow animate-pulse-glow"
-      >
-        <Music className={`w-5 h-5 ${isPlaying ? 'animate-pulse' : ''}`} />
+      <Button onClick={togglePlay} size="icon" variant="secondary" className="rounded-full shadow-glow animate-pulse-glow">
+        <Music className={`w-5 h-5 ${isPlaying ? "animate-pulse" : ""}`} />
       </Button>
-      <Button
-        onClick={toggleMute}
-        size="icon"
-        variant="secondary"
-        className="rounded-full shadow-glow"
-      >
+      <Button onClick={toggleMute} size="icon" variant="secondary" className="rounded-full shadow-glow">
         {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
       </Button>
       <audio ref={audioRef} loop src={musicUrl} />

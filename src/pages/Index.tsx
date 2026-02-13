@@ -71,17 +71,17 @@ With all my heart ❤️`;
     {
       date: "The Beginning",
       title: "When Our Eyes First Met",
-      description: "I remember this moment like it was yesterday. The world seemed to pause, and everything else faded away. That was the moment I knew my life was about to change forever.",
+      description: "I remember this moment like it was yesterday. I still remember how we awakwardly held hands for the first time, and how it felt like the most natural thing in the world. That was the moment I knew my life was about to change forever. Just us two on our second bench enjoying lectures.",
       image: timeline1,
     },
     {
       date: "Our First Date",
       title: "The Start of Something Beautiful",
-      description: "Nervous smiles, endless conversations, and the realization that I never wanted the night to end. You made me feel like the luckiest person alive, and you still do every single day.",
+      description: "Nervous smiles, endless conversations, and the realization that I never wanted the night to end. You made me feel like the luckiest person alive, and you still do every single day. I still remember how we were so new to this and how u didnt like mt selection of momo places.",
       image: timeline2,
     },
     {
-      date: "Our Adventure",
+      date: "Our First Trip Together",
       title: "Exploring the World Together",
       description: "Every adventure with you is a new chapter in our story. Whether we're climbing mountains or just walking down the street, everything is better when I'm with you.",
       image: timeline3,
